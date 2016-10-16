@@ -1,0 +1,5 @@
+require 'pry'
+gem 'minitest'
+require 'minitest/autorun'
+require 'minitest/pride'
+require_relative 'night_writer.rb'

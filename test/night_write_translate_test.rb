@@ -3,8 +3,6 @@ gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require '../lib/night_write_translate.rb'
-# require '../lib/alphabet.rb'
-# require '../lib/message.txt'
 
 
 class NightWriteTest < Minitest::Test

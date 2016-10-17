@@ -1,6 +1,7 @@
-class Alphabet
+class NightRead
 
-  attr_reader :library
+  attr_reader :library,
+              :inverse_library
 
   def initialize
     @library = { "a" => ["0.", "..", ".."], "b" => ["0.", "0.", ".."],
@@ -24,6 +25,8 @@ class Alphabet
                 "T" => ["...0", "..00", ".00."], "U" => ["..0.", "....", "..00"], "V" => ["..0.", "..0.", ".000"],
                 "W" => ["...0", "..00", ".0.0"], "X" => ["..00", "....", ".000"], "Y" => ["..00", "...0", ".000"],
                "Z" => ["..0.", "...0", ".000"] }
+    @inverse_library = library.invert
+
   end
 
 end

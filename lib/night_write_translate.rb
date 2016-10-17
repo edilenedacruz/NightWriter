@@ -1,8 +1,20 @@
-class Alphabet
+# require_relative 'message.txt'
 
-  attr_reader :library
-
-  def initialize
+class NightWrite
+  attr_reader :input,
+              :output,
+              :library,
+              :new_array,
+              :row_1,
+              :row_2,
+              :row_3
+  def initialize(input)
+    @input = input
+    @output = output
+    @new_array = new_array
+    @row_1 = row_1
+    @row_2 = row_2
+    @row_3 = row_3
     @library = { "a" => ["0.", "..", ".."], "b" => ["0.", "0.", ".."],
                 "c" => ["00", "..", ".."], "d" => ["00", ".0", ".."], "e" => ["0.", ".0",".."],
                 "f" => ["00", "0.", ".."], "g" => ["00", "00", ".."], "h" => ["0.", "00", ".."],
@@ -26,4 +38,22 @@ class Alphabet
                "Z" => ["..0.", "...0", ".000"] }
   end
 
+  def translate_to_braille
+    array = input.chomp.chars.map do |letter|
+      library[letter]
+    end
+    @new_array = array.transpose.map do |letter|
+      letter.join
+    end
+    @row_1 = @new_array[0]
+    @row_2 = @new_array[1]
+    @row_3 = @new_array[2]
+  end
+
+
+
 end
+
+
+# translate = NightWrite.new("turtle")
+# translate.translate_to_braille
